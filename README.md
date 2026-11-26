@@ -1,11 +1,11 @@
 # ReqDocs
 
-ReqDocs is a mobile-first application that helps people prepare current
-documents for a service and share only one consented Service Pack with
-authorised staff.
+This is a bit late but I built ReqDocs as a hackathon entry. This repository is my personal copy of the project.
 
-The detailed product and engineering specifications live in
-[`ReqDocs/`](ReqDocs/README.md).
+ReqDocs helps people keep their documents in a private vault, check what they
+still need for a service, and share only the required documents with authorised
+staff using a one-time code. The demo covers two services: a UJ bursary
+allowance claim and a vehicle licence disc renewal.
 
 ## Local setup
 
