@@ -1,0 +1,2 @@
+"use client";
+export default function PacksError({ reset }: { reset: () => void }) { return <main className="mx-auto max-w-3xl px-5 py-14"><h1 className="text-3xl font-bold">Service Packs are unavailable</h1><p className="mt-3">Your documents are safe. Try loading this page again.</p><button className="mt-6 min-h-12 bg-[var(--primary)] px-5 font-bold text-white" onClick={reset}>Try again</button></main>; }

@@ -1,0 +1,4 @@
+import { apiSuccess } from "@/lib/api/responses";
+import { requireApiRole } from "@/lib/auth/api-auth";
+import { listStaffProcessed } from "@/lib/history/server";
+export async function GET() { const auth = await requireApiRole("staff"); if ("errorResponse" in auth) return auth.errorResponse; const recent = await listStaffProcessed(auth.profile.id); const today = new Intl.DateTimeFormat("en-CA", { timeZone: "Africa/Johannesburg" }).format(new Date()); return apiSuccess({ organization: { id: auth.profile.organizationId, name: auth.profile.displayName }, recent, todayChangesRequested: recent.filter((event) => event.eventType === "changes_requested" && event.createdAt.startsWith(today)).length, todayDocumentsReceived: recent.filter((event) => event.eventType === "documents_received" && event.createdAt.startsWith(today)).length }); }
